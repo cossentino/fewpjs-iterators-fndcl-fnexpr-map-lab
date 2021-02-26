@@ -12,5 +12,19 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const capTutorials = tutorials.map(tutorial => capitalizeString(tutorial))
+  return capTutorials
+}
+
+
+
+
+
+function capitalizeString(str) {
+  const splitStr = str.split(" ")
+  const fixedStrArray = splitStr.map(function(word) {
+    const capLetter = word[0].toUpperCase()
+    return `${capLetter + word.slice(1)}` 
+  })
+  return fixedStrArray.join(" ")
 }
